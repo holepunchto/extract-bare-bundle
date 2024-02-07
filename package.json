@@ -1,6 +1,6 @@
 {
   "name": "extract-bare-bundle",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Extract a bare bundle to disk",
   "main": "index.js",
   "dependencies": {},
