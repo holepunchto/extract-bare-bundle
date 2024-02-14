@@ -22,7 +22,8 @@ for (const [key, map] of Object.entries(b.resolutions)) {
   if (!addon) continue
   const dirname = path.join('.', key, 'prebuilds', host)
   const addonPath = path.resolve(path.join(filename, addon))
-  const nonHoistedPath = path.join(dirname, addon.split('/').pop().replace(/@[^.]+/g, ''))
+  const name = key.replace(/\/$/, '').split('/').pop()
+  const nonHoistedPath = path.join(dirname, name + '.' + addonPath.split('.').pop())
   fs.mkdirSync(dirname, { recursive: true })
   try {
     fs.unlinkSync(nonHoistedPath)
