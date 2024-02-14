@@ -3,9 +3,9 @@ const Bundle = require('bare-bundle')
 const fs = require('fs')
 const path = require('path')
 
-const host = process.platform + '-' + process.arch
 const filename = process.argv[2]
 if (!filename) throw new Error('Usage: extract-bare-bundle filename')
+const host = process.argv[3] || process.platform + '-' + process.arch
 
 const b = Bundle.from(fs.readFileSync(filename))
 
